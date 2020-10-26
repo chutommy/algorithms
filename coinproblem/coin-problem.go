@@ -16,19 +16,19 @@ func SolveOptimal(value int, coins []int) int {
 		return -1
 	}
 
-	// init memory for dyn. program.
+	// init memory
 	m := make([]float64, value+1)
 	m[0] = 0
 
-	// iterate over coins
+	// build memory
 	for v := 1; v <= value; v++ {
 
 		m[v] = math.Inf(1)
 
-		// for each coin
+		// iterate over coins
 		for _, c := range coins {
 
-			// after coin added, the sum will not be higher
+			// filter
 			if v-c >= 0 {
 				m[v] = math.Min(m[v], m[v-c]+1)
 			}
