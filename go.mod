@@ -1,3 +1,3 @@
-module github.com/chutified/al-go-rithms
+module github.com/chutommy/algorithms
 
 go 1.15
